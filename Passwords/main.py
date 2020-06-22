@@ -12,6 +12,7 @@ while True:
     choice = input("?: ")
     
     site = input("\nSite name: ")
+    site = site.lower()
 
     if choice == '1':
 
@@ -19,10 +20,11 @@ while True:
 
             print(f"\nThe site already exist!")
             msg = input("Do you want to change it? Y/N\n")
-            passwords.pop(str(site.lower()))
+            passwords.pop(str(site))
             x = 0
         
         else:
+            msg = "nope"
             x = 1
             
 
@@ -30,7 +32,7 @@ while True:
 
             print(f"\npass: {rChar(18)}")
 
-            passwords[str(site.lower())] = rChar(18)
+            passwords[str(site)] = str(rChar(18))
 
             with open("passwords.json", "w") as f:
                 json.dump(passwords, f, indent=4)
@@ -41,7 +43,7 @@ while True:
         
         if site in passwords:
 
-            print("\n password: " + passwords[site.lower()])
+            print("\n password: " + passwords[site])
         
         else:
             print("\nThis site doesn't exist in database!")
