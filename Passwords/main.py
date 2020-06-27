@@ -29,10 +29,11 @@ while True:
             
 
         if msg.lower() == "y" or x == 1:
+            p = rChar(18)
 
-            print(f"\npass: {rChar(18)}")
+            print(f"\npass: {p}")
 
-            passwords[str(site)] = str(rChar(18))
+            passwords[str(site)] = str(p)
 
             with open("passwords.json", "w") as f:
                 json.dump(passwords, f, indent=4)
