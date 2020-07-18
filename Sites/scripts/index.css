@@ -1,0 +1,54 @@
+*{
+    margin: 0;
+    padding: 0;
+    font-family: Rajdhani;
+}
+.group {
+    height: 100%;
+    width: 100%;
+}
+.background {
+    background: #248f24;
+}
+
+.box {
+    background: #006622;
+    top: 50%;
+    left: 50%;
+    margin-top: -250px;
+    margin-left: -250px;
+    width: 500px;
+    height: 500px;
+    position: absolute;
+    border-radius: 25px;
+    border: 2px solid #003311;
+}
+.box h1 {
+    color: white;
+    font-size: 42px;
+    margin-top: 10px;
+    margin-left: 150px;
+}
+.profilepfp img {
+    margin-top: 30px;
+    margin-left: 100px;
+    border-radius: 100%;
+    width: 300px;
+    height: 300px;
+}
+.links ul {
+    list-style: none;
+    display: inline-flex;
+}
+.links ul li img {
+    margin-left: 0 40px;
+    width: 50px;
+    margin-left: 42px;
+    margin-top: 20px;
+}
+html, body {
+    height: 100%;
+}
+a:link {
+    text-decoration: none;
+}
