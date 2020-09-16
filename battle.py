@@ -1,10 +1,12 @@
-import random, time, sys
+import random, time, sys, os
 
+clear = lambda: os.system('cls')
 name = input("NickName: ")
 time.sleep(1)
+clear()
 
-print("\nBeat the boss!")
-time.sleep(1.5)
+print("Beat the boss!")
+time.sleep(2.5)
 
 boss_health = 125
 user_health = 100
@@ -12,6 +14,7 @@ user_health = 100
 battle = 0
 
 while (boss_health >= 1) and (user_health >= 1):
+    clear()
 
     boss_damage = random.randint(6, 12)
     user_damage = random.randint(1, 16)
@@ -20,7 +23,7 @@ while (boss_health >= 1) and (user_health >= 1):
     boss_heal = random.randint(2, 12)
     battle += 1
     
-    print(f"\nROUND {battle}!")
+    print(f"ROUND {battle}!")
     time.sleep(1.2)
     print("Boss health: " + str(boss_health))
     print(f"{name.strip()} health: " + str(user_health))
@@ -29,8 +32,9 @@ while (boss_health >= 1) and (user_health >= 1):
 
     if user_health == 100:
         print("\nYou can use only hit / heal")
-    
-    skema = input("?: ")
+        skema = input("?: ")
+    else:
+        skema = input("\n?: ")
 
 
     if skema == "hit":
@@ -76,9 +80,9 @@ while (boss_health >= 1) and (user_health >= 1):
 
     print("\n3")
     time.sleep(1)
-    print("2")
+    print("\t2")
     time.sleep(1)
-    print("1")
+    print("\t\t1")
     time.sleep(1)
 
 
