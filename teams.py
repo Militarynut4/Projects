@@ -1,11 +1,11 @@
 import random, colorama, os, time
 colorama.init(convert=True)
 clear = lambda : os.system("cls")
-players = []
-display_teams = []
 
 def Main():
     while True:
+        players = []
+        display_teams = []
         clear()
         banner()
         print(colorama.Fore.YELLOW + "Note! Type DONE to stop adding players")
@@ -44,6 +44,7 @@ def Main():
         for x, y in enumerate(display_teams):
             print(colorama.Fore.WHITE + f"Team {x + 1} | {y} ")
         input(colorama.Fore.RED + f"\n\nPress ENTER to continue")
+        
 
 def banner():
     print(colorama.Fore.MAGENTA + """
