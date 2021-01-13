@@ -4,28 +4,32 @@ clear = lambda : os.system("cls")
 
 def Main():
     while True:
-        players = []
-        display_teams = []
-        clear()
-        banner()
-        print(colorama.Fore.YELLOW + "Note! Type DONE to stop adding players")
-        print(colorama.Fore.WHITE + "Add player to list!")
-        player_count = 1
         while True:
-            user = input(f"{player_count}: ")
+            players = []
+            display_teams = []
+            clear()
+            banner()
+            print(colorama.Fore.YELLOW + "Note! Type DONE to stop adding players")
+            print(colorama.Fore.YELLOW + "Note! Type RESET to reset the list")
+            print(colorama.Fore.WHITE + "Add player to list!")
+            player_count = 1
+            while True:
+                user = input(f"{player_count}: ")
+                if user.lower() == "done" or user.lower() == 'reset':
+                    break
+                players.append(user)
+                player_count += 1
             if user.lower() == "done":
                 break
-            players.append(user)
-            player_count += 1
         while True:
             clear()
             banner()
-            print(colorama.Fore.YELLOW + "Note! You can't have less then 2 players")
+            print(colorama.Fore.YELLOW + f"Note! You can't have less then 2 players or more then {len(players) - 1}")
             print(colorama.Fore.WHITE + "How many players do you want in one team?")
             teams = input("?:")
             try:
                 teams = int(teams)
-                if teams != 1:
+                if teams != 1 and teams < len(players):
                     break
             except:
                 pass
